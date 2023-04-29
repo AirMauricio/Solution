@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import pandas as pd
 import pymysql
+import configparser
 
 app = Flask(__name__)
 
@@ -10,22 +11,33 @@ def load_data():
     data = pd.read_csv('transform_PDF_CSV/csv_tables/departamentos/departamentos.csv', sep=";")
 
     # Conectar con la base de datos MySQL
-    conn = pymysql.connect(host='localhost',
-                           user='root',
-                           password='',
-                           db='HR')
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+
+    conn = pymysql.connect(host     = config.get('database', 'host'),
+                           user     = config.get('database', 'user'),
+                           password = config.get('database', 'password'),
+                           db       = config.get('database', 'database')
+                           )
     cursor = conn.cursor()
 
     # Insertar los datos en la tabla de la base de datos
-    for i, row in data.iterrows():
-        query = "INSERT INTO HR.departments (id, department) VALUES (%s, %s)"
-        params = (row['id'], row['department'])
-        cursor.execute(query, params)
-    conn.commit()
+    try:
+        for i, row in data.iterrows():
+            query = "INSERT INTO HR.departments (id, department) VALUES (%s, %s)"
+            params = (row['id'], row['department'])
+            cursor.execute(query, params)
+        conn.commit()
 
-    # Cerrar la conexión con la base de datos
-    cursor.close()
-    conn.close()
+    except Exception as e:
+        print(f"Error: {e}")
+        conn.rollback()
+    
+    finally:
+        # Cerrar la conexión con la base de datos
+        cursor.close()
+        conn.close()
 
     # Devolver una respuesta JSON con los datos insertados
     return jsonify({'message': 'Los datos han sido cargados correctamente'})
