@@ -18,8 +18,9 @@ def load_data():
 
     # Insertar los datos en la tabla de la base de datos
     for i, row in data.iterrows():
-        query = f"INSERT INTO HR.departments (id, department) VALUES ('{row['id']}', '{row['department']}')"
-        cursor.execute(query)
+        query = "INSERT INTO HR.departments (id, department) VALUES (%s, %s)"
+        params = (row['id'], row['department'])
+        cursor.execute(query, params)
     conn.commit()
 
     # Cerrar la conexión con la base de datos
@@ -31,3 +32,4 @@ def load_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
