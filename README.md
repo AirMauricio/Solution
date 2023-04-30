@@ -1,4 +1,8 @@
 # README
+
+## Proyecto Python para carga de datos a MySQL y generación de reportes
+Este proyecto consta de 4 fases para procesar archivos en formato PDF, convertirlos a CSV, cargarlos en una base de datos MySQL y generar reportes a través de un REST API.
+
 ## Dependencias
 
 Para instalar las dependencias necesarias para ejecutar el proyecto, se debe utilizar el siguiente comando en la terminal:
@@ -6,7 +10,7 @@ Para instalar las dependencias necesarias para ejecutar el proyecto, se debe uti
 ```
 pip install -r requirements.txt
 ```
-
+---
 ## Ejecución del proyecto
 
 1. Fase 1: Transformación archivos y creación de base de datos.
@@ -35,11 +39,11 @@ Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Acceder a la dirección web creada “/employee_hires_by_job_and_dept_2021_quarterly” para ver el reporte de empleados contratados por trimestre y departamento.
 - Ejecutar el módulo “department_hires_above_mean_2021.py” con el comando “python department_hires_above_mean_2021.py”.
 - Acceder a la dirección web creada “/department_hires_above_mean_2021” para ver el reporte de departamentos con contrataciones superiores al promedio del 2021.
-
+---
 ## Contribuyendo
 
 Si deseas contribuir al proyecto, puedes crear un pull request en Github o comunicarte con el autor a través del correo electrónico proporcionado en el archivo LICENSE.
 
 ## Autor
 
-El autor de este proyecto es [tu_nombre](https://github.com/tunombre).
+El autor de este proyecto es [Oscar Gama](https://github.com/AirMauricio).
