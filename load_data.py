@@ -1,18 +1,21 @@
+# Importar las librerías necesarias
 from flask import Flask, jsonify
 import pandas as pd
 import pymysql
-import configparser
 import numpy as np
+import configparser
 
+# Crear una instancia de Flask
 app = Flask(__name__)
 
-@app.route('/load_data')
+# Definir la ruta de la API
+@app.route('/load_data', methods=['GET'])
 def load_data():
     # Leer los datos de los archivos CSV con pandas
     files = ['transform_PDF_CSV/csv_tables/departamentos.csv', 'transform_PDF_CSV/csv_tables/jobs.csv', 'transform_PDF_CSV/csv_tables/hired.csv']
     tables = ['departments_origen', 'jobs_origen', 'hired_employees_origen']
     num_inserted = [0, 0, 0]  # contador para cada tabla
-    # batch_size = 1000 # tamaño del lote
+    
     for i, file in enumerate(files):
         data = pd.read_csv(file, sep=";")
         table = tables[i]
@@ -22,11 +25,12 @@ def load_data():
         config.read('config.ini')
 
         conn = pymysql.connect(
-            host=config.get('database', 'host'),
-            user=config.get('database', 'user'),
-            password=config.get('database', 'password'),
-            db=config.get('database', 'database')
-        )
+                                
+                                user      = config['database']['USER'], 
+                                password  = config['database']['PASSWORD'],
+                                host      = config['database']['HOST'], 
+                                database  = config['database']['DATABASE']
+                            )
 
         cursor = conn.cursor()
 
@@ -74,5 +78,6 @@ def load_data():
     message = f"Se insertaron {num_inserted[0]} datos en la tabla departments_origen, {num_inserted[1]} datos en la tabla jobs_origen, y {num_inserted[2]} datos en la tabla hired_employees_origen."
     return jsonify({'message': message})
 
+# Iniciar la aplicación en modo debug
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
