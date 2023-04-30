@@ -1,3 +1,7 @@
+--== CREA LA BASE DE DATOS
+
+CREATE DATABASE HR
+
 --==== CREA LAS TABLAS ORIGEN
 CREATE TABLE HR.hired_employees_origen(
 	id 				int,
@@ -52,9 +56,13 @@ CREATE TABLE HR.tb_hired_employees (
 	FOREIGN KEY(job_id) REFERENCES tb_jobs(job_id)	
 )
 
+
+
+
+
+
+
 --== INSERTA A TABLAS LIMPIAS	
-
-
 
 	CALL HR.insert_departments();
 	CALL HR.insert_jobs(); 
