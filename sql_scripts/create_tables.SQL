@@ -1,8 +1,4 @@
---== CREA LA BASE DE DATOS
-
-CREATE DATABASE HR
-
---==== CREA LAS TABLAS ORIGEN
+-- CREA LAS TABLAS ORIGEN
 CREATE TABLE HR.hired_employees_origen(
 	id 				int,
 	name 			nvarchar(255),
@@ -25,7 +21,7 @@ CREATE TABLE HR.jobs_origen(
 
 )
 
---==== CREA LAS TABLAS LIMPIAS
+-- CREA LAS TABLAS LIMPIAS
 
 CREATE TABLE HR.tb_departments (
 	department_id 	int primary key,
@@ -55,28 +51,3 @@ CREATE TABLE HR.tb_hired_employees (
 	FOREIGN KEY(department_id) REFERENCES tb_departments(department_id),
 	FOREIGN KEY(job_id) REFERENCES tb_jobs(job_id)	
 )
-
-
-
-
-
-
-
---== INSERTA A TABLAS LIMPIAS	
-
-	CALL HR.insert_departments();
-	CALL HR.insert_jobs(); 
-	CALL HR.insert_hired_employees();
-
-
---=================== PUNTO 1	
- 		
-	SELECT *
-	 FROM HR.view_employee_hires_by_job_and_dept_2021_quarterly
-	ORDER BY department ASC, job ASC
-	
---=================== PUNTO 2	
-	
-	SELECT *
-	 FROM HR.view_department_hires_above_mean_2021
-	ORDER BY hired DESC
