@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ---
 ## Ejecución del proyecto
 
-1. Fase 1: Transformación archivos y creación de base de datos.
+### Fase 1: Transformación archivos y creación de base de datos.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Ubicar los archivos en formato .pdf en la carpeta “transform_PDF_CSV/pdf_tables”.
@@ -21,18 +21,18 @@ Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Crear la base de datos en MySQL con el comando ```CREATE DATABASE HR```.
 - Crear las tablas origen y limpias con los comandos indicados en el archivo “create_tables.sql” ubicado en la carpeta “sql_scripts”.
 
-2. Fase 2: Cargue de la información por medio de un REST API.
+### Fase 2: Cargue de la información por medio de un REST API.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Asegurarse que la base de datos MySQL se encuentre en línea con el comando “mysql.server start”.
 - Ejecutar el script “load_data.py” con el comando “python load_data.py”.
 - Acceder a la dirección web creada “/load_data” y esperar a que se cargue la información a las tablas origen.
 
-3. Fase 3: Limpieza de la información.
+### Fase 3: Limpieza de la información.
 
 Para ejecutar esta fase se deben ejecutar los procedimientos almacenados indicados en el archivo “stored_procedures.sql” ubicado en la carpeta “sql_scripts”.
 
-4. Fase 4: Creación de los reportes en un end-point.
+### Fase 4: Creación de los reportes en un end-point.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Ejecutar el módulo “employee_hires_by_job_and_dept_2021_quarterly.py” con el comando “python employee_hires_by_job_and_dept_2021_quarterly.py”.
