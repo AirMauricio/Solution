@@ -12,6 +12,7 @@ def load_data():
     files = ['transform_PDF_CSV/csv_tables/departamentos.csv', 'transform_PDF_CSV/csv_tables/jobs.csv', 'transform_PDF_CSV/csv_tables/hired.csv']
     tables = ['departments_origen', 'jobs_origen', 'hired_employees_origen']
     num_inserted = [0, 0, 0]  # contador para cada tabla
+    # batch_size = 1000 # tamaño del lote
     for i, file in enumerate(files):
         data = pd.read_csv(file, sep=";")
         table = tables[i]
@@ -32,6 +33,8 @@ def load_data():
         # Insertar los datos en la tabla correspondiente
         try:
             if table == 'departments_origen':
+                # Validar valores NaN
+                data = data.replace({np.nan: None})                
                 for j, row in data.iterrows():
                     query = "INSERT INTO departments_origen (id, department) VALUES (%s, %s)"
                     params = (row['id'], row['department'])
@@ -40,6 +43,8 @@ def load_data():
                 conn.commit()
 
             elif table == 'jobs_origen':
+                # Validar valores NaN
+                data = data.replace({np.nan: None})                
                 for j, row in data.iterrows():
                     query = "INSERT INTO jobs_origen (id, job) VALUES (%s, %s)"
                     params = (row['id'], row['job'])
