@@ -8,6 +8,12 @@ Este proyecto consta de 4 fases para procesar archivos en formato PDF, convertir
 Para instalar las dependencias necesarias para ejecutar el proyecto, se debe utilizar el siguiente comando en la terminal:
 
 ```
+sudo apt-get update
+sudo apt install python3.10-venv
+sudo apt-get install mysql-server
+sudo systemctl status mysql
+sudo systemctl start mysql
+sudo systemctl enable mysql
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
