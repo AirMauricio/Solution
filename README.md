@@ -100,10 +100,10 @@ database = HR" > config.ini
 Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Ubicar los archivos en formato .pdf en la carpeta “transform_PDF_CSV/pdf_tables”.
 - Ejecutar el script “main.py” ubicado en la ruta: “transform_PDF_CSV/main.py” con el comando ```python main.py```.
-- Crear la base de datos en MySQL con el comando ```CREATE DATABASE HR```.
-- Crear las tablas origen y limpias con los comandos indicados en el archivo “create_tables.sql” ubicado en la carpeta “sql_scripts”.
+- Crear la base de datos en MySQL con el comando ```CREATE DATABASE HR;```.
+- Crear las tablas origen y limpias con los comandos indicados en el archivo “create_tables.sql” ubicado en la carpeta “sql_scripts”, para verificar que fueron creadas se puede hacer con el comando ```SHOW TABLES;```.
 - Crea los procedimientos almacenados que se encuentran en el archivo "create_SP.sql" ubicado en la carpeta "sql_scripts", verifica que los procedimientos se hayan creado correctamente con el comando ```SHOW PROCEDURE STATUS WHERE db = 'HR';``` ejecutado en mysql.
-- Crea las vistas que se encuentran en el archivo "create_views.sql" ubicado en la carpeta "sql_scripts".
+- Crea las vistas que se encuentran en el archivo "create_views.sql" ubicado en la carpeta "sql_scripts" para verificar que fueron correctamente creadas se puede utilizar nuevamente el comando ```SHOW TABLES;```.
 
 ### Fase 2: Cargue de la información por medio de un REST API.
 

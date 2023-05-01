@@ -1,4 +1,5 @@
 -- CREA LAS TABLAS ORIGEN
+USE HR;
 CREATE TABLE HR.hired_employees_origen(
 	id int,
 	name nvarchar(255),
@@ -22,7 +23,7 @@ CREATE TABLE HR.jobs_origen(
 );
 
 -- CREA LAS TABLAS LIMPIAS
-
+USE HR;
 CREATE TABLE HR.tb_departments (
 	department_id 	int primary key,
 	created_at 		datetime default now(),

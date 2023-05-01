@@ -1,4 +1,5 @@
 -- CREA VISTA view_department_hires_above_mean_2021
+USE HR;
 CREATE OR REPLACE
 ALGORITHM = UNDEFINED VIEW HR.view_department_hires_above_mean_2021 AS
 SELECT
@@ -30,7 +31,7 @@ ORDER BY
     COUNT(1) DESC;
 
 -- CREA VISTA view_employee_hires_by_job_and_dept_2021_quarterly
-
+USE HR;
 CREATE OR REPLACE
 ALGORITHM = UNDEFINED VIEW HR.view_employee_hires_by_job_and_dept_2021_quarterly AS
 select
