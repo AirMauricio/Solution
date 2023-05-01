@@ -57,17 +57,6 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-### Construccion del entorno de Docker
-```
-docker-compose build
-
-docker-compose up -d   
-
-docker-compose ps  
-
-docker-compose exec solution-csv bash   
-
-```
 
 ### Definision contraseña base de datos 
 
@@ -92,6 +81,18 @@ user = root
 password = toor
 database = HR" > config.ini
 ```
+### Construccion del entorno de Docker
+```
+docker-compose build
+
+docker-compose up -d   
+
+docker-compose ps  
+
+docker-compose exec solution-csv bash   
+
+```
+
 ---
 ## Ejecución del proyecto
 
@@ -108,7 +109,7 @@ Para ejecutar esta fase se deben seguir los siguientes pasos:
 ### Fase 2: Cargue de la información por medio de un REST API.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
-- Asegurarse que la base de datos MySQL se encuentre en línea con el comando ```mysql.server start```.
+- Asegurarse que la base de datos MySQL se encuentre en línea con el comando ```sudo service mysql start```.
 - Ejecutar el script “load_data.py” con el comando ```python load_data.py```.
 - Acceder a la dirección web creada “/load_data” y esperar a que se cargue la información a las tablas origen.
 
