@@ -1,6 +1,9 @@
 services:
+  # Nombre del servicio
   solution-csv:
+    # Configuración de la imagen del contenedor
     build:
+      # Contexto de construcción, en este caso el directorio actual
       context: .
+      # Archivo Dockerfile que se utilizará para construir la imagen
       dockerfile: Dockerfile
-    
