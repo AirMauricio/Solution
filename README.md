@@ -56,6 +56,35 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+
+### Construccion del entorno de Docker
+```
+docker-compose build
+
+docker-compose up -d   
+
+docker-compose ps  
+
+docker-compose exec solution-csv bash   
+
+```
+
+### Definision contraseña base de datos 
+
+```
+sudo mysql
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
+
+FLUSH PRIVILEGES;
+
+exit;
+
+mysql -u root -p
+
+
+```
+
 ---
 ## Ejecución del proyecto
 
