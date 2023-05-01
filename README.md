@@ -120,9 +120,9 @@ Para ejecutar esta fase se deben ejecutar los procedimientos almacenados indicad
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
 - Ejecutar el módulo “employee_hires_by_job_and_dept_2021_quarterly.py” con el comando ```python employee_hires_by_job_and_dept_2021_quarterly.py```.
-- Acceder a la dirección web creada ```/employee_hires_by_job_and_dept_2021_quarterly``` para ver el reporte de empleados contratados por trimestre y departamento.
+- Acceder a la dirección web creada "/employee_hires_by_job_and_dept_2021_quarterly" para ver el reporte de empleados contratados por trimestre y departamento.
 - Ejecutar el módulo “department_hires_above_mean_2021.py” con el comando ```python department_hires_above_mean_2021.py```.
-- Acceder a la dirección web creada ```/department_hires_above_mean_2021``` para ver el reporte de departamentos con contrataciones superiores al promedio del 2021.
+- Acceder a la dirección web creada "/department_hires_above_mean_2021" para ver el reporte de departamentos con contrataciones superiores al promedio del 2021.
 
 ---
 ## Contribuyendo
