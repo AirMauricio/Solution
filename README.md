@@ -108,8 +108,8 @@ Para ejecutar esta fase se deben seguir los siguientes pasos:
 ### Fase 2: Cargue de la información por medio de un REST API.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
-- Asegurarse que la base de datos MySQL se encuentre en línea con el comando “mysql.server start”.
-- Ejecutar el script “load_data.py” con el comando “python load_data.py”.
+- Asegurarse que la base de datos MySQL se encuentre en línea con el comando ```mysql.server start```.
+- Ejecutar el script “load_data.py” con el comando ```python load_data.py```.
 - Acceder a la dirección web creada “/load_data” y esperar a que se cargue la información a las tablas origen.
 
 ### Fase 3: Limpieza de la información.
@@ -119,9 +119,9 @@ Para ejecutar esta fase se deben ejecutar los procedimientos almacenados indicad
 ### Fase 4: Creación de los reportes en un end-point.
 
 Para ejecutar esta fase se deben seguir los siguientes pasos:
-- Ejecutar el módulo “employee_hires_by_job_and_dept_2021_quarterly.py” con el comando “python employee_hires_by_job_and_dept_2021_quarterly.py”.
+- Ejecutar el módulo “employee_hires_by_job_and_dept_2021_quarterly.py” con el comando ```python employee_hires_by_job_and_dept_2021_quarterly.py```.
 - Acceder a la dirección web creada ```/employee_hires_by_job_and_dept_2021_quarterly``` para ver el reporte de empleados contratados por trimestre y departamento.
-- Ejecutar el módulo “department_hires_above_mean_2021.py” con el comando “python department_hires_above_mean_2021.py”.
+- Ejecutar el módulo “department_hires_above_mean_2021.py” con el comando ```python department_hires_above_mean_2021.py```.
 - Acceder a la dirección web creada ```/department_hires_above_mean_2021``` para ver el reporte de departamentos con contrataciones superiores al promedio del 2021.
 
 ---
