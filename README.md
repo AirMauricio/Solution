@@ -7,14 +7,51 @@ Este proyecto consta de 4 fases para procesar archivos en formato PDF, convertir
 
 Para instalar las dependencias necesarias para ejecutar el proyecto, se debe utilizar el siguiente comando en la terminal:
 
+### Clonacion del repositorio
 ```
 git clone
+```
+
+### Instalacion de Python
+
+```
 sudo apt-get update
 sudo apt install python3.10-venv
+```
+
+### Instalacion Docker
+```
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+ sudo mkdir -p /etc/apt/keyrings   
+
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+ sudo apt-get update 
+
+ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+ sudo docker run hello-world
+```
+
+### Instalacion de MySQL
+```
 sudo apt-get install mysql-server
 sudo systemctl status mysql
 sudo systemctl start mysql
 sudo systemctl enable mysql
+```
+
+### Creacion de ambiente virtual e instalacion de ependencias
+```
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
