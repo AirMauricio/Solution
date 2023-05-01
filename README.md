@@ -81,10 +81,17 @@ FLUSH PRIVILEGES;
 exit;
 
 mysql -u root -p
-
-
 ```
 
+### Creacion del archivo config.ini
+```
+echo "[database]
+host = localhost
+port = 3306
+user = root
+password = toor
+database = HR" > config.ini
+```
 ---
 ## Ejecución del proyecto
 
