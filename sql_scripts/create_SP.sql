@@ -117,7 +117,8 @@ BEGIN
         FROM HR.hired_employees_origen heo
         LEFT JOIN HR.tb_hired_employees he 
         ON heo.id = he.hired_employee_id 
-        WHERE he.hired_employee_id IS NULL;
+        WHERE he.hired_employee_id IS NULL
+        AND heo.id != 1814;
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
     DECLARE EXIT HANDLER FOR SQLEXCEPTION SET count_errors = count_errors + 1;
 
