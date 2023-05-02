@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ```
 
 
-### Definision contraseña base de datos 
+### Definición contraseña base de datos 
 
 ```
 sudo mysql
